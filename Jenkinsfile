@@ -1,6 +1,6 @@
 pipeline{
-   agent{
-        label'master'
+    agent{
+        label'dev'
     }
     stages{
         stage('remove backup'){
@@ -11,13 +11,8 @@ pipeline{
             }
         }
     }
-    post {
-    {
-        checkout scm
-        def repository = scm.userRemoteConfigs[1].url  
-        addShortText(text: data, background: 'orange', border: 1); $repository
-    }
-
-    }
-
+     post {
+         def repository = scm.userRemoteConfigs[1].url  
+         addShortText(text: data, background: 'orange', border: 1, $repository);
+     }
 }
