@@ -4,9 +4,11 @@ pipeline{
     }
     stages{
         stage{
-            sh '''
-            echo "hello"
-            '''
+           steps{
+                sh '''
+                echo "hello"
+                '''
+           }
         }
     }
     post
