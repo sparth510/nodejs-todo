@@ -13,6 +13,9 @@ pipeline{
                      sh 'echo "${BUILD_USER}"'
                      script{
                      currentBuild.description = "BUILD BY : ${BUILD_USER}"
+                     currentBuild.description = "COMMIT ID : ${GIT_COMMIT}"
+                     currentBuild.description = "BRANCH : ${GIT_BRANCH}"
+
                      }
                  }
               
