@@ -2,8 +2,7 @@ pipeline{
     agent{
         label'master'
     }
-    environment{        
-    }
+   
     stages{
         stage('first step'){
             steps{
