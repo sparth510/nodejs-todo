@@ -1,7 +1,11 @@
+currentBuild.description = """
+ ${GIT_COMMIT}
+"""
 pipeline{
     agent{
         label'master'
     }
+    
     stages{
         stage('first step'){
             steps{
@@ -12,8 +16,6 @@ pipeline{
         }
     }
     post{
-        Set build description{
-        addShortText(text: data, background: 'orange', border: 1 ); ${GIT_COMMIT}
-    }
+        addShortText(text: data, background: 'orange', border: 1);
     }
 }
