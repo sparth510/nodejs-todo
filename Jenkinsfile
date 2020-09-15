@@ -12,6 +12,8 @@ pipeline{
         }
     }
     post{
+        Set build description{
         addShortText(text: data, background: 'orange', border: 1 ); ${GIT_COMMIT}
+    }
     }
 }
