@@ -10,7 +10,7 @@ pipeline{
         stage('first step'){
             steps{
                 script{   
-                    currentBuild.description = BUILD BY : "${GIT_COMMIT}"
+                    currentBuild.description = "${GIT_COMMIT}"
                  }
             }
           
