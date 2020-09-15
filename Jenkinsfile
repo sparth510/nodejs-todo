@@ -12,7 +12,7 @@ pipeline{
                  wrap([$class: 'BuildUser']){
                      sh 'echo "${BUILD_USER}"'
                      script{
-                     currentBuild.description = "${BUILD_USER}"
+                     currentBuild.description = "BUILD BY : ${BUILD_USER}"
                      }
                  }
               
