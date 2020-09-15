@@ -9,7 +9,6 @@ pipeline{
     stages{
         stage('first step'){
             steps{
-                
                  script{
                     wrap([$class: 'BuildUser'])   
                     currentBuild.description = BUILD BY : "${BUILD_USER}"
