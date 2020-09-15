@@ -9,8 +9,11 @@ pipeline{
     stages{
         stage('first step'){
             steps{
-                script{   
-                    currentBuild.description = "${GIT_COMMIT}"
+                script{ 
+                    sh'''
+                    wrap([$class: 'BuildUser'])
+                    '''
+                    currentBuild.description = "${BUILD_USER}"
                  }
             }
           
