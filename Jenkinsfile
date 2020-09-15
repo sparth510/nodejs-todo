@@ -1,7 +1,9 @@
 pipeline{
     agent{
-        label'master'
+        node{
+          label'master'
         }
+    }
         {
             checkout scm
             def repo = sh(returnStdout: true, script: 'git config remote.origin').trim()
