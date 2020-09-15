@@ -1,15 +1,13 @@
-currentBuild.displayName = " ${GIT_COMMIT}"
 pipeline{
     agent{
         label'master'
-    }
-    
+    }    
     stages{
         stage('first step'){
             steps{
-                 sh '''
-                 echo hello
-                 '''
+                 script{
+                     currentBuild.displayName = " ${GIT_COMMIT}"
+                 }
             }
         }
     }
