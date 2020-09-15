@@ -10,6 +10,7 @@ pipeline{
                  '''
             }
         }
+    }
     post
     {
         checkout scm
