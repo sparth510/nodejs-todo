@@ -11,7 +11,7 @@ pipeline{
             steps{
                 wrap([$class: 'BuildUser']){
                 script{   
-                    currentBuild.description = BUILD BY : "${BUILD_USER}"
+                    currentBuild.description = BUILD BY : "${GIT_COMMIT}"
                  }
             }
           }
