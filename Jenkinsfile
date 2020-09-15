@@ -12,9 +12,6 @@ pipeline{
         throw err
         error "Colud not find any Git repository for the job ${JOB_NAME}"
         }
-
-}
-
     stages{
         stage('remove backup'){
             steps{
