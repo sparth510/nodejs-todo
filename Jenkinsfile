@@ -6,7 +6,7 @@ pipeline{
         stage('first step'){
             steps{
                  script{
-                     currentBuild.description = addShortText(text: data, background: 'orange', border: 1);"${GIT_COMMIT}"
+                     currentBuild.description = BUILD BY : "${BUILD_USER}"
                  }
             }
         }
