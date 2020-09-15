@@ -15,7 +15,5 @@ pipeline{
             }
         }
     }
-    post{
-        addShortText(text: data, background: 'orange', border: 1);
-    }
+   
 }
