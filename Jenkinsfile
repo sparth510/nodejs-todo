@@ -15,7 +15,7 @@ pipeline{
             }
         }
     }
-     post {  
+    post{  
          addShortText(text: data, background: 'orange', border: 1, $repository_url);
      }
 }
