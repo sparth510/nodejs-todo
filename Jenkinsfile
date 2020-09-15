@@ -1,15 +1,9 @@
 pipeline{
     agent{
-        node{
-          label'master'
-        }
+        label'master'
     }
-        {
-            checkout scm
-            def repo = sh(returnStdout: true, script: 'git config remote.origin').trim()
-        }
     stages{
-        stage('remove backup'){
+        stage('first step'){
             steps{
                  sh '''
                  echo hello
@@ -17,7 +11,3 @@ pipeline{
             }
         }
     }
-    post{  
-         addShortText(text: data, background: 'orange', border: 1, $repository_url);
-     }
-}
