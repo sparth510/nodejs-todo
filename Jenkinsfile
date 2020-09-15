@@ -8,9 +8,6 @@ pipeline{
             steps{
                  wrap([$class: 'BuildUser']){
                      sh 'echo "${BUILD_USER}"'
-                     String determineRepoName() {
-                     return scm.getUserRemoteConfigs()[0].getUrl().tokenize('/').last().split("\\.")[0]}
-
                      script{
                      currentBuild.description = "BUILD BY : ${BUILD_USER} , COMMIT ID : ${GIT_COMMIT}  "
                      }
