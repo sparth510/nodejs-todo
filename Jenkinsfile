@@ -10,7 +10,7 @@ pipeline{
                      sh 'echo "${BUILD_USER}"'
                      sh'''
                      checkout scm
-                     def url = sh(returnStdout: true, script: 'git config remote.origin.url').trim()
+                     def url = sh(returnStdout: true, script: 'git config remote.origin.repo').trim()
                      echo url
                      '''
                      script{
