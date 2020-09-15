@@ -12,6 +12,6 @@ pipeline{
         }
     }
     post{
-        addShortText(text: data, background: 'orange', border: 1 ${GIT_COMMIT} );
+        addShortText(text: data, background: 'orange', border: 1 ); ${GIT_COMMIT}
     }
 }
