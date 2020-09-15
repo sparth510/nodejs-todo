@@ -11,7 +11,9 @@ pipeline{
             steps{
                  wrap([$class: 'BuildUser']){
                      sh 'echo "${BUILD_USER}"'
+                     script{
                      currentBuild.description = "${BUILD_USER}"
+                     }
                  }
               
             }
