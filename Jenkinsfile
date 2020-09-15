@@ -3,14 +3,13 @@ pipeline{
         label'master'
     }
     stages{
-        stage{
-           steps{
-                sh '''
-                echo "hello"
-                '''
-           }
+        stage('remove backup'){
+            steps{
+                 sh '''
+                 echo hello
+                 '''
+            }
         }
-    }
     post
     {
         checkout scm
