@@ -1,6 +1,4 @@
-currentBuild.description = """
- ${GIT_COMMIT}
-"""
+currentBuild.description = " ${GIT_COMMIT}"
 pipeline{
     agent{
         label'master'
