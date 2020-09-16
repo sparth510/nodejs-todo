@@ -1,3 +1,4 @@
+checkout scm
 def repositoryUrl = scm.userRemoteConfigs[0].url  
 pipeline{
     agent{
