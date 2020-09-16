@@ -1,3 +1,7 @@
+  String determineRepoName() 
+  {
+      return scm.getUserRemoteConfigs()[0].getUrl().tokenize('/')[3].split("\\.")[0]
+    }
   pipeline{
     agent{
         label'master'
@@ -8,9 +12,6 @@
             steps{
                  wrap([$class: 'BuildUser']){
                      sh 'echo "${BUILD_USER}"'
-                     String determineRepoName() {
-                        return scm.getUserRemoteConfigs()[0].getUrl().tokenize('/')[3].split("\\.")[0]
-                     }
                      sh '''
                      echo ${determineRepoName}
                      '''
