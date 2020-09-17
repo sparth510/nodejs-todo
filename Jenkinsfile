@@ -12,7 +12,7 @@ pipeline{
                      sh '''
                      commit="$(sh url.sh)"
                      '''
-                     currentBuild.description = "BUILD BY : ${BUILD_USER} "
+                     currentBuild.description = "BUILD BY : ${BUILD_USER} ${commit} "
                      }
                  }
               
