@@ -11,6 +11,7 @@ pipeline{
                      sh '''
                      commit = "$(sh url.sh)" 
                      '''
+                     sh 'echo "${commit}"'
                      script{
                      currentBuild.description = "BUILD BY : ${BUILD_USER} , ${commit}"
                      }
