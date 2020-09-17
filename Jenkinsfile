@@ -8,12 +8,8 @@ pipeline{
             steps{
                  wrap([$class: 'BuildUser']){
                      sh 'echo "${BUILD_USER}"'
-                     sh '''
-                     commit = "$(sh url.sh)" 
-                     '''
-                     sh 'echo "${commit}"'
                      script{
-                     currentBuild.description = "BUILD BY : ${BUILD_USER} , ${commit}"
+                     currentBuild.description = "BUILD BY : ${BUILD_USER} , "$(sh url.sh)""
                      }
                  }
               
