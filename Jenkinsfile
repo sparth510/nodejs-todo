@@ -1,4 +1,3 @@
-def commit= sh url.sh
 pipeline{
     agent{
         label'master'
@@ -9,7 +8,10 @@ pipeline{
             steps{
                  wrap([$class: 'BuildUser']){
                      sh 'echo "${BUILD_USER}"'
-                     script{            
+                     script{
+                     sh '''
+                     commit= "$(sh url.sh)"
+                     '''
                      currentBuild.description = "BUILD BY : ${BUILD_USER} ${commit} "
                      }
                  }
