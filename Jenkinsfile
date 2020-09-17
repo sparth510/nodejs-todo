@@ -9,9 +9,7 @@ pipeline{
                  wrap([$class: 'BuildUser']){
                      sh 'echo "${BUILD_USER}"'
                      script{
-                     sh '''
-                     commit= "$(sh url.sh)"
-                     '''
+                     VERSION_STRING = sh (script: "./url.sh" , returnStdout: true).trim()
                      currentBuild.description = "BUILD BY : ${BUILD_USER} ${commit} "
                      }
                  }
