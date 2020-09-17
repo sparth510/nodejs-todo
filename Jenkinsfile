@@ -8,6 +8,9 @@ pipeline{
             steps{
                  wrap([$class: 'BuildUser']){
                      sh 'echo "${BUILD_USER}"'
+                     sh '''
+                     sh url.sh
+                     '''
                      script{
                      currentBuild.description = "BUILD BY : ${BUILD_USER}"
                      }
