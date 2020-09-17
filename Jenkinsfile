@@ -1,4 +1,4 @@
-commit="$(sh url.sh)"
+def commit="$(sh url.sh)"
 pipeline{
     agent{
         label'master'
