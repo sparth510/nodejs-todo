@@ -16,7 +16,7 @@
                      echo ${determineRepoName}
                      '''
                      script{
-                     currentBuild.description = "BUILD BY : ${BUILD_USER} , COMMIT ID : ${GIT_COMMIT} , GIT_COMMIT_URL = <a href=`https://stackoverflow.com/questions/14082635/make-an-url-a-result-of-hudson-build`>abc</a> "
+                     currentBuild.description = "BUILD BY : ${BUILD_USER} , COMMIT URL = https://github.com/$(git config --get remote.origin.url | cut -d/ -f4 | cut -d. -f1)/$(git config --get remote.origin.url | cut -d/ -f5 | cut -d. -f1)/$(git rev-parse --short=5000 HEAD~0)
                      }
                  }
               
