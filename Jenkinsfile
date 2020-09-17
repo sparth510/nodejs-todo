@@ -10,7 +10,7 @@ pipeline{
                      sh 'echo "${BUILD_USER}"'
                      script{
                      VERSION_STRING = sh (script: " sh url.sh" , returnStdout: true).trim()
-                     currentBuild.description = "BUILD BY : ${BUILD_USER} ${VERSION_STRING} "
+                     addShortText(text:'commit_id' link:'${VERSION_STRING}', background: 'orange', border: 1);
                      }
                  }
               
