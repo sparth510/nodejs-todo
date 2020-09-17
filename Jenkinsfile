@@ -8,7 +8,7 @@ pipeline{
             steps{
                  wrap([$class: 'BuildUser']){
                      sh 'echo "${BUILD_USER}"'
-                     chod +x url.sh
+                     chmod +x url.sh
                      script{
                      URL = sh (script: "./url.sh" , returnStdout: true).trim()
                      addShortText (text: "COMMIT_LINK", link:"$URL", background: "red", border: "1", color: "black")
